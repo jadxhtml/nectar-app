@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator } from "@react-navigation/stack";
+import Onbording from "./screen/onbording";
+import phoneNumber from "./screen/phone-number";
+import { NavigationContainer } from "@react-navigation/native";
+import SigninScreen from "./screen/signin";
+import VerifyNumber from "./screen/verify-number";
 
-export default function App() {
+
+export default function App(){
+  const stack = createStackNavigator();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <NavigationContainer>
+      <stack.Navigator screenOptions={{headerShown: false}}>
+        <stack.Screen name="onbording" component={Onbording}/>
+        <stack.Screen name="phoneNumber" component={phoneNumber}/>
+        <stack.Screen name="signin" component={SigninScreen} />
+        <stack.Screen name="verify" component={VerifyNumber} />
+      </stack.Navigator>
+    </NavigationContainer>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
