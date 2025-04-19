@@ -14,7 +14,7 @@ export default function VerifyNumber(){
             <Text style={style.text}>Enter your 4-digit code</Text>
             <TextInput placeholder="Code" keyboardType="numeric" secureTextEntry={true} style={style.phoneInput}/>
             <TouchableOpacity>
-                <Ionicons name="arrow-forward" style={style.arrowNext} />
+                <Ionicons name="arrow-forward" style={style.arrowNext} onPress={()=>nav.navigate('location')}/>
             </TouchableOpacity>
         </View>
     )
