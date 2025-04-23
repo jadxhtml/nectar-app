@@ -7,6 +7,7 @@ import VerifyNumber from "./screen/verify-number";
 import SelectLocation from "./screen/select-location";
 import LoginScreen from "./screen/login";
 import SignupScreen from "./screen/signup";
+import HomeScreen from "./screen/home";
 
 export default function App(){
   const stack = createStackNavigator();
@@ -20,6 +21,7 @@ export default function App(){
         <stack.Screen name="location" component={SelectLocation} />
         <stack.Screen name="login" component={LoginScreen} />
         <stack.Screen name="signup" component={SignupScreen} />
+        <stack.Screen name="home" component={HomeScreen} />
       </stack.Navigator>
     </NavigationContainer>
   )
